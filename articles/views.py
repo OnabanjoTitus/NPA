@@ -45,6 +45,7 @@ class ArticleDeleteView(LoginRequiredMixin, DeleteView):
             raise PermissionDenied
         return super().dispatch(request, *args, **kwargs)
 
+
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article_new.html'
