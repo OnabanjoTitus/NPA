@@ -56,3 +56,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):  # new
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+def ArticleAboutView(request):
+    return render(request, 'about.html')

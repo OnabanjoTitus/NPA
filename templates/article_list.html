@@ -11,12 +11,12 @@
 {% for article in object_list %}
 <div class="card">
 <div class="card-header">
-<span class="font-weight-bold">{{ article.title }}</span> &middot;
-<span class="text-muted">by {{ article.author }} |
+<span class="font-weight-bold" style="color: deepskyblue">{{ article.title }}</span> &middot;
+<span class="text-muted" style="color: #5b80b2">by {{ article.author }} |
 {{ article.date }}</span>
 </div>
-<div class="card-body">
-<p>{{ article.body }}</p>
+<div class="card-body" style="background: paleturquoise" >
+<p style="color:turquoise">{{ article.body }}</p>
 <a href="{% url 'article_edit' article.pk %}">Edit</a> |
 <a href="{% url 'article_delete' article.pk %}">Delete</a>
 </div>
