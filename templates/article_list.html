@@ -18,10 +18,12 @@
 <div class="card-body" style="background: paleturquoise" >
 <p style="color:turquoise">{{ article.body }}</p>
 <a href="{% url 'article_edit' article.pk %}">Edit</a> |
-<a href="{% url 'article_delete' article.pk %}">Delete</a>
+<a href="{% url 'article_delete' article.pk %}">Delete</a>|
+    <a href="{% url 'article_comment' article.pk %}">comment</a>
 </div>
 <div class="card-footer">
 {% for comment in article.comments.all %}
+    <h3>Comments</h3>
 <p>
 <span class="font-weight-bold">{{ comment.author }} &middot;</span>
 {{ comment }}

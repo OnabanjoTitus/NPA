@@ -5,7 +5,14 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.views.generic.edit import DeleteView, UpdateView
 from django.core.exceptions import PermissionDenied
 # Create your views here.
-from .models import Article
+from .models import Article, Comment
+
+
+class ArticleCommentView(LoginRequiredMixin, ListView):
+    model = Comment
+    template_name = 'article_comment.html'
+    login_url = 'login'
+    success_url = reverse_lazy('article_list')
 
 
 class ArticleListView(LoginRequiredMixin, ListView):

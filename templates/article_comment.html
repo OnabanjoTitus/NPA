@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>comments</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+<h1>Comments</h1>
+<form action="" method="post">{% csrf_token %}
+    <label>
+        <input type="text">
+    </label>
+<button class="btn btn-info ml-2" type="submit">comment</button>
+</form>
+{% endblock content %}
+</body>
+</html>
