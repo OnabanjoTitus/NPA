@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.views.generic.edit import DeleteView, UpdateView
 from django.core.exceptions import PermissionDenied
 # Create your views here.
+
 from .models import Article, Comment
 
 
@@ -60,7 +61,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     login_url = 'login'
     success_url = reverse_lazy('article_list')
 
-    def form_valid(self, form):  # new
+    def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
